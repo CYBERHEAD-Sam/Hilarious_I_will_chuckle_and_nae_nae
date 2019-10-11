@@ -1018,6 +1018,7 @@ GameObject:
   - component: {fileID: 215151775622685501}
   - component: {fileID: 215151775615683805}
   - component: {fileID: 215151775984464610}
+  - component: {fileID: -2670759487201988885}
   m_Layer: 0
   m_Name: SimpleFarmer_Brown
   m_TagString: Untagged
@@ -1076,6 +1077,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+--- !u!114 &-2670759487201988885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215151775623118621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f3fa8a14d3845d5aeb40a6f6c10c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBound: 30
+  lowerBound: -40
 --- !u!1 &215151775623118713
 GameObject:
   m_ObjectHideFlags: 0
