@@ -5,11 +5,23 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     Rigidbody targetRb;
+    public int pointValue;
     private float minSpeed = 12;
     private float maxSpeed = 16;
     private float maxTorque = 10;
     private float xRange = 4;
     private float ySpawnPos = -6;
+    private GameManager gameManager;
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+        gameManger.UpdateScore(pointValue);
+
+    }
+    private void OnTriggerEnter(Collider other) 
+    {
+        Destroy(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +29,11 @@ public class Target : MonoBehaviour
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
         transform.position = RandomSpawnPos();
+        gameManager = GameObject.Find("GM").GetComponent<GM>();
 
 
     }
+    
 
 
     Vector3 RandomForce() { return Vector3.up * Random.Range(minSpeed, maxSpeed); }
