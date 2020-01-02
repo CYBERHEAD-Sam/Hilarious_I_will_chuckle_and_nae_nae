@@ -11,7 +11,7 @@ public class Target : MonoBehaviour
     private float maxTorque = 10;
     private float xRange = 4;
     private float ySpawnPos = -6;
-    private GameManager gameManager;
+    private GameManager GameManager;
     private void OnMouseDown()
     {
         Destroy(gameObject);
@@ -29,7 +29,7 @@ public class Target : MonoBehaviour
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
         transform.position = RandomSpawnPos();
-        gameManager = GameObject.Find("GM").GetComponent<GM>();
+        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
 
     }
