@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 557395319173465416}
   - component: {fileID: 6504026715935764623}
   - component: {fileID: 1671647524574208053}
-  - component: {fileID: 6262729030860224645}
+  - component: {fileID: 7683347380791357245}
   m_Layer: 0
   m_Name: Good 1
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.52475095, y: 0.06719127, z: 0.5247512}
   m_Center: {x: 0, y: -0.0000000018626456, z: -0.00000007450582}
---- !u!114 &6262729030860224645
+--- !u!114 &7683347380791357245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,3 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2aab8f6f8a14e5899d75eaf54c3900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointValue: 5
+  explosionParticle: {fileID: 6601538019107920666, guid: 70a1428e5f80a4866a779ef1ab9fe521,
+    type: 3}

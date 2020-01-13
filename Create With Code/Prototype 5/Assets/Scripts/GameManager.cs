@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private float spawnRate = 1.0f;
     private int score;
+    public int pointValue;
+    public TextMeshProUGUI gameOverText;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnTarget());
         score = 0;
         scoreText.text = "Score: " + score;
-        UpdateScore(0);
+        UpdateScore(pointValue);
+        gameOverText.gameObject.SetActive(true);
     }
 
     IEnumerator SpawnTarget() 
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, targets.Count);
             Instantiate(targets[index]);
-            UpdateScore(pointValue);
+            UpdateScore(0);
         }
     }
 
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    public void UpdateScore()
+    public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;

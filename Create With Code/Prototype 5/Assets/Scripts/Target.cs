@@ -11,11 +11,13 @@ public class Target : MonoBehaviour
     private float maxTorque = 10;
     private float xRange = 4;
     private float ySpawnPos = -6;
-    private GameManager GameManager;
+    private GameManager gameManager;
+    public ParticleSystem explosionParticle;
     private void OnMouseDown()
     {
         Destroy(gameObject);
-        gameManger.UpdateScore(pointValue);
+        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+        gameManager.UpdateScore(pointValue);
 
     }
     private void OnTriggerEnter(Collider other) 
@@ -29,7 +31,7 @@ public class Target : MonoBehaviour
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
         transform.position = RandomSpawnPos();
-        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
 
     }
